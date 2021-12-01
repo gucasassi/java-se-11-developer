@@ -2,17 +2,17 @@
 
 ## Table of Contents
 1. [Java Basics](#Java-Basics)
-    1. [Understanding the Java class structure](#Understanding-the-Java-class-structure)
-        * [Fields and Methods](#Fields-and-Methods)
-        * [Comments](#Comments)
-        * [Classes vs Files](#Classes-vs-Files)
-    2. [Our first program](#Our-first-program)    
-        * [Writing a Main method](#Writing-a-Main-method)
-        * [Compile and execute code](#Compile-and-execute-code)
-    3. [Package Declarations and Imports](#Package-Declarations-and-Imports)
-        * [Wildcards](#Wildcards)
-        * [Redundant Imports](#Redundant-Imports)
-        * [Naming Conflicts](#Naming-Conflicts)
+    - [Understanding the Java class structure](#Understanding-the-Java-class-structure)
+        - [Fields and Methods](#Fields-and-Methods)
+        - [Comments](#Comments)
+        - [Classes vs Files](#Classes-vs-Files)
+    - [Our first program](#Our-first-program)    
+        - [Writing a Main method](#Writing-a-Main-method)
+        - [Compile and execute code](#Compile-and-execute-code)
+    - [Package Declarations and Imports](#Package-Declarations-and-Imports)
+        - [Wildcards](#Wildcards)
+        - [Redundant Imports](#Redundant-Imports)
+        - [Naming Conflicts](#Naming-Conflicts)
 2. [Working with Java Data Types](#Working-with-Java-Data-Types)
 
 </br>
@@ -27,14 +27,14 @@ In Java programs, <b>classes are the basic building blocks</b>. When defining a 
 
 The simplest Java class you can write looks like this:</br></br>
 
-<p style="font-size:.7rem;">Animal.java</p>
+<sub>Animal.java</sub>
 
 ```java
 public class Animal {}                  
 ```
 </br>
 
-Java calls a word with special meaning a `keyword`. The `public` keyword means that the class can be used by other classes and the `class` keyword indicates you're defining a class, in our case a class called `Animal`. 
+Java calls a word with special meaning a <b>keyword</b>. The `public` keyword means that the class can be used by other classes and the `class` keyword indicates you're defining a class, in our case a class called `Animal`. 
 
 In the following section, we'll look at <b>fields</b>, <b>methods</b> and <b>comments</b>.</br></br>
 
@@ -43,9 +43,9 @@ In the following section, we'll look at <b>fields</b>, <b>methods</b> and <b>com
 
 Java classes have to primary elements: <b>fields</b>, more generally known as <b>variables</b>, and <b>methods</b>. Variables hold the state of the program, and methods operate on that state. Together these are called the <b>members of the class</b>. 
 
-At the moment class `Animal` isn't a very interesting class, so we can add our first <b>field</b>.</br></br>
+At the moment class <b>Animal</b> isn't a very interesting class, so we can add our first <b>field</b>.</br></br>
 
-<p style="font-size:.7rem;">Animal.java</p>
+<sub>Animal.java</sub>
 
 ```java
 public class Animal {                   
@@ -57,7 +57,8 @@ public class Animal {
 </br>
 
 We define a <b>variable</b> named `name` and also define the type of that variable to be a `String`. Now we can add methods.</br></br>
-<p style="font-size:.8rem;">Animal.java</p>
+
+<sub>Animal.java</sub>
 
 ```java
 public class Animal {                   
@@ -75,7 +76,7 @@ public class Animal {
 We defined our first method. A method basically is an operation that can be called. In our case, we define a method called `getName` that return the value of `name` field. Again, `public` is used to specify that this method may be called from other classes. Next comes the return type, in our case, the method return a `String` object.  Finally `getName` is the name of the method. 
 
 Let's see another example.</br></br>
-<p style="font-size:.7rem;">Animal.java</p>
+<sub>Animal.java</sub>
 
 ```java
 public class Animal {                       
@@ -96,13 +97,13 @@ public class Animal {
 
 We define another method. Again `public` signify that this method may be called from other classes. This one has a special return type called `void`. `void` means that when we call the `setName` method no vaule is returned. This method requires information be supplied to it from the calling method. This information is called a `parameter`, in this case `setName` method has one `parameter` named `newName`, and it is of type `String`. 
 
-The full declaration of a method is called a `method signature`. In the last example, we define a method that the caller should pass in on `String` parameter and expect nothing to be returned.</br></br>
+The full declaration of a method is called a <b>method signature</b>. In the last example, we define a method that the caller should pass in on `String` parameter and expect nothing to be returned.</br></br>
 
 
 #### Comments
 </br>
 
-Another comment part of the code is called a `comment`. `comments` aren't executable code, but make your code easier to read. There are three types of `comments` in Java: <b>single-line</b>, <b>multiple-line</b> and <b>Javadoc</b>. Let's start with the first type, the <b>single-line</b> comment.</br></br>
+Another common part of the code is called a <b>comment</b>. <b>Comments</b> aren't executable code, but make your code easier to read. There are three types of <b>comments</b> in Java: <b>single-line</b>, <b>multiple-line</b> and <b>Javadoc</b>. Let's start with the first type, the <b>single-line</b> comment.</br></br>
 
 ```java
 // Single-line comment until the end of the line.
@@ -143,9 +144,9 @@ At this point, we have seen how structure a basic class and how define fields an
 #### Writing a Main method
 </br>
 
-A Java program begins execution with the `main` method. A `main` method is the gateway between the startup of a Java process, which is managed by the <b>Java Virtual Machine (JVM)</b>. The simpliest possible class with a `main` method looks like this:</br></br>
+A Java program begins execution with the <b>main</b> method. A <b>main</b> method is the gateway between the startup of a Java process, which is managed by the <b>Java Virtual Machine (JVM)</b>. The simpliest possible class with a <b>main</b> method looks like this:</br></br>
 
-<p style="font-size:.7rem;">Zoo.java</p>
+<sub>Zoo.java</sub>
 
 ```java 
 public class Zoo {
@@ -158,7 +159,7 @@ public class Zoo {
 ```
 </br>
 
-Naturaly, `public` means any place in the program. The keyword `static` binds a method to its class so it can be called by just the class name, as in, for example, `Zoo.main()`. With the use of static, Java does not need to create an object to call the `main()` method.
+Naturaly, `public` means any place in the program. The keyword `static` binds a method to its class so it can be called by just the class name, as in, for example, `Zoo.main()`. With the use of static, Java does not need to create an object to call the `main` method.
 
 This code doesn't do anything useful. It has no instruction other than to declare the entry point. In fact, the only reason we even need a class structure to start Java program is because the language requires it. In the following section, we'll look at how to <b>compile</b> and <b>execute</b> a Java program.
 
@@ -168,7 +169,7 @@ This code doesn't do anything useful. It has no instruction other than to declar
 To compile Java code, we use the `javac` command. This command needs to be followed by the file we want to compile and this file must have the extension `.java`. The result is a file of `bytecode` by the same name, but with a `.class` filename extension. Let see an example:</br></br>
 
 
-<p style="font-size:.7rem;">terminal</p>
+<sub>Terminal</sub>
 
 ```bash
 javac Zoo.java
@@ -179,7 +180,7 @@ javac Zoo.java
 
 Now, we can execute the generated file using `java` command.</br></br>
 
-<p style="font-size:.7rem;">terminal</p>
+<sub>Terminal</sub>
 
 ```bash
 java Zoo
@@ -188,7 +189,7 @@ java Zoo
 
 Once this instruction is executed, we see nothing. This is because for now the app does nothing. Suppose we add the following instruction to our `Zoo.java` class.</br></br>
 
-<p style="font-size:.7rem;">Zoo.java</p>
+<sub>Zoo.java</sub>
 
 ```java
 public class Zoo {
