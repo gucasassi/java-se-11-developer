@@ -9,8 +9,8 @@ public class Animal {                       // Defining an Animal class.
         return this.name;
     }
 
-    public void setName(String newName) {   // SetName method signature with one parameter newName 
-        this.name = name                    // of type String that return void.
+    public void setName(String newName) {   // SetName method signature with one parameter newName of type String that return void.
+        this.name = name                    
     }
 
 }
