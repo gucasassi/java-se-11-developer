@@ -25,7 +25,7 @@ In Java programs, <b>classes are the basic building blocks</b>. When defining a 
 ### Understanding the Java class structure
 </br>
 
-The simplest Java class you can write looks like this:</br></br>
+The simplest Java class you can write looks like this:</br>
 
 <sub>Animal.java</sub>
 
@@ -34,16 +34,23 @@ public class Animal {}
 ```
 </br>
 
-Java calls a word with special meaning a <b>keyword</b>. The `public` keyword means that the class can be used by other classes and the `class` keyword indicates you're defining a class, in our case a class called `Animal`. 
+Java calls a word with special meaning a <b>keyword</b>. 
+
+- The `public` keyword means that the class can be used by other classes.
+- The `class` keyword indicates you're defining a class, in our case a class called `Animal`. 
 
 In the following section, we'll look at <b>fields</b>, <b>methods</b> and <b>comments</b>.</br></br>
 
 #### Fields and Methods
 </br>
 
-Java classes have to primary elements: <b>fields</b>, more generally known as <b>variables</b>, and <b>methods</b>. Variables hold the state of the program, and methods operate on that state. Together these are called the <b>members of the class</b>. 
+Java classes have to primary elements: <b>fields</b>, more generally known as <b>variables</b>, and <b>methods</b>. 
+- <b>Variables</b> hold the state of the program.
+- <b>Methods</b> operate on that state. 
 
-At the moment class <b>Animal</b> isn't a very interesting class, so we can add our first <b>field</b>.</br></br>
+Together these are called the <b>members of the class</b>. 
+
+At the moment class <b>Animal</b> isn't a very interesting class, so we can add our first <b>field</b>.</br>
 
 <sub>Animal.java</sub>
 
@@ -56,7 +63,7 @@ public class Animal {
 ```
 </br>
 
-We define a <b>variable</b> named `name` and also define the type of that variable to be a `String`. Now we can add methods.</br></br>
+We define a <b>variable</b> named `name` and also define the type of that variable to be a `String`. Now we can add methods.</br>
 
 <sub>Animal.java</sub>
 
@@ -73,9 +80,13 @@ public class Animal {
 ```
 </br>
 
-We defined our first method. A method basically is an operation that can be called. In our case, we define a method called `getName` that return the value of `name` field. Again, `public` is used to specify that this method may be called from other classes. Next comes the return type, in our case, the method return a `String` object.  Finally `getName` is the name of the method. 
+We defined our first method. A method basically is an operation that can be called. In our case, we define a method called `getName` that return the value of `name` field. 
 
-Let's see another example.</br></br>
+- Again, `public` is used to specify that this method may be called from other classes. 
+- Next comes the return type, in our case, the method return a `String` object.
+- Finally `getName` is the name of the method. 
+
+Let's see another example.</br>
 <sub>Animal.java</sub>
 
 ```java
@@ -95,7 +106,11 @@ public class Animal {
 ```
 </br>
 
-We define another method. Again `public` signify that this method may be called from other classes. This one has a special return type called `void`. `void` means that when we call the `setName` method no vaule is returned. This method requires information be supplied to it from the calling method. This information is called a `parameter`, in this case `setName` method has one `parameter` named `newName`, and it is of type `String`. 
+We define another method. 
+
+- Again `public` signify that this method may be called from other classes. 
+- This one has a special return type called `void`. `void` means that when we call the `setName` method no vaule is returned. 
+- This method requires information be supplied to it from the calling method. This information is called a `parameter`, in this case `setName` method has one `parameter` named `newName`, and it is of type `String`. 
 
 The full declaration of a method is called a <b>method signature</b>. In the last example, we define a method that the caller should pass in on `String` parameter and expect nothing to be returned.</br></br>
 
@@ -103,14 +118,14 @@ The full declaration of a method is called a <b>method signature</b>. In the las
 #### Comments
 </br>
 
-Another common part of the code is called a <b>comment</b>. <b>Comments</b> aren't executable code, but make your code easier to read. There are three types of <b>comments</b> in Java: <b>single-line</b>, <b>multiple-line</b> and <b>Javadoc</b>. Let's start with the first type, the <b>single-line</b> comment.</br></br>
+Another common part of the code is called a <b>comment</b>. <b>Comments</b> aren't executable code, but make your code easier to read. There are three types of <b>comments</b> in Java: <b>single-line</b>, <b>multiple-line</b> and <b>Javadoc</b>. Let's start with the first type, the <b>single-line</b> comment.</br>
 
 ```java
 // Single-line comment until the end of the line.
 ```
 </br>
 
-A <b>single-line</b> comment begin with two slashes `//`. Anything you type after that on the same line is ignored by the compiler. Next comes the multiple-line comment:</br></br>
+A <b>single-line</b> comment begin with two slashes `//`. Anything you type after that on the same line is ignored by the compiler. Next comes the multiple-line comment:</br>
 
 ```java
 /*
@@ -119,7 +134,7 @@ A <b>single-line</b> comment begin with two slashes `//`. Anything you type afte
 ```
 </br>
 
-A <b>multiple-line</b> comment includes anything starting from `/*` until the symbol `*/`. Finally, we have a <b>Javadoc</b> comment.</br></br>
+A <b>multiple-line</b> comment includes anything starting from `/*` until the symbol `*/`. Finally, we have a <b>Javadoc</b> comment.</br>
 
 ```java
 /**
@@ -134,7 +149,51 @@ This comment is similar to a multiple-line comments except it use `/**` and `**/
 #### Classes vs Files
 </br>
 
+Most of the time, each Java class is defined in its own `.java` file. It is usually `public`, which means any code can call it. Java does not require that the class be `public`. For example this class is just fine:
 
+<sub>Animal.java</sub>
+
+```java 
+class Animal {
+    String name;
+}
+```
+</br>
+
+You can even put two classes in the same file. <b>When you do so, at most one of the classes in the file is allowed to be public</b>. A file containing the following is also fine:
+
+<sub>Animal.java</sub>
+
+```java 
+public class Animal {
+    String name;
+}
+
+class Animal2 {}
+```
+</br>
+
+If you do have a `public class`, <b>it needs to match the filename</b>. For example, the following example would not compile in a file named `Animal.java`.
+
+<sub>Animal.java</sub>
+
+```java 
+class Animal {
+    String name;
+}
+
+public class Animal2 {}
+```
+</br>
+
+If we try to compile this example, we will see an error like this:</br>
+
+<sub>Terminal</sub>
+
+```console 
+Animal.java:5: error: class Animal2 is public, should be declared in a file named Animal2.java
+```
+</br>
 
 ### Our first program
 </br>
